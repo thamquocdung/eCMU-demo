@@ -1,0 +1,49 @@
+
+<html>
+ <head>
+   <title>Flask Static Demo</title>
+ </head>
+ <body>
+   <h1>{{message}}</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Song#</th>
+        <th scope="col">Song Name</th>
+        <th scope="col">Mixture</th>
+        <th scope="col">Vocals</th>
+        <th scope="col">Drums</th>
+        <th scope="col">Bass</th>
+        <th scope="col">Other</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      {% for sample in samples %}
+          <th rowspan="2" scope="row">{{sample.song_id}}</th>
+          <td rowspan="2">{{ sample.song_name }}</td>
+          <td rowspan="2">
+            <audio controls class="audio-container audio-mix"><source src="{{sample.mixture_audio}}" type="audio/wav"></audio>
+          </td>
+          {% for src in source_names %}
+            <td>
+              <audio controls class="audio-container"><source src="{{sample.src_audio_base}}/{{src}}/gt.wav" type="audio/wav"></audio>
+            </td>
+          {% endfor %}
+          <tr>
+            {% for src in source_names %}
+            <td>
+              <audio controls class="audio-container"><source src="{{sample.src_audio_base}}/{{src}}/pred.wav" type="audio/wav"></audio>
+            </td>
+          {% endfor %}
+          </tr>
+      {% endfor %}
+
+      <tr></tr>
+      
+      
+    </tbody>
+  </table>
+
+ </body>
+</html>
