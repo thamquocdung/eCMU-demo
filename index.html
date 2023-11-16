@@ -1,1 +1,386 @@
-echo Hello World
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Music Source Separation">
+  <meta name="keywords" content="Umix, Demix">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Source Separation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="/static/css/bulma.min.css">
+  <link rel="stylesheet" href="/static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="/static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="/static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="/static/css/index.css">
+  <link rel="stylesheet" href="/static/css/custom.css">
+  <link rel="icon" href="/static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="/static/js/fontawesome.all.min.js"></script>
+  <script src="/static/js/bulma-carousel.min.js"></script>
+  <script src="/static/js/bulma-slider.min.js"></script>
+  <!-- <script src="/static/js/index.js"></script> -->
+  <script src="/static/js/custom.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <!-- <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a> -->
+
+      <!-- <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div> -->
+      <!-- </div>
+    </div> -->
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">eCMU: An Efficient Phase-aware Framework for Music Source Separation with Conformer</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#">Quoc-Dung Tham</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Duc-Dung Nguyen</a><sup>1</sup>,</span>
+           
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Ho Chi Minh city University of Technology (HCMUT)</span>
+            <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="./demo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-play-circle"></i>
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" height="100%" src="./static/images/source_separation_io.png">
+        <!-- <source src="./static/videos/teaser.mp4"
+                type="video/mp4"> -->
+      </img>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Demix your mixture into 4 stems (Vocals, Drums, Bass, Other)
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Music source separation (MSS) is a task to separate audio
+            mixtures into individual sources (a.k.a - stems) such as vocals, drums, bass, other etc. 
+          </p>
+          <p>
+            MSS is an important topic for music
+            information retrieval (MIR) since it can be used for several
+            downstream MIR tasks including melody extraction,
+            pitch estimation, music transcription, music remixing, and so on. MSS also has several direct applications
+            such as Karaoke and music remixing.
+          </p>
+          
+          
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+  <div class="columns is-centered">
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Audio Samples</h2>
+        <div class="columns is-vcentered">
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Song Name</th>
+                    <th scope="col">Mixture</th>
+                    <th scope="col"></th>
+                    <th scope="col">Vocals</th>
+                    <th scope="col">Drums</th>
+                    <th scope="col">Bass</th>
+                    <th scope="col">Other</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  {% for sample in samples %}
+                      <th rowspan="2" scope="row">{{loop.index}}</th>
+                      <td rowspan="2">{{ sample.song_name }}</td>
+                      <td rowspan="2">
+                        <audio controls class="audio-container audio-mix"><source src="{{sample.mixture_audio}}" type="audio/wav"></audio>
+                      </td>
+                      <td>gt</td>
+                      {% for src in source_names %}
+                        <td>
+                          <audio controls class="audio-container"><source src="{{sample.src_audio_base}}/{{src}}/gt.wav" type="audio/wav"></audio>
+                        </td>
+                      {% endfor %}
+                      
+                      <tr>
+                        <td>pred</td>
+                        {% for src in source_names %}
+                        <td>
+                          <audio controls class="audio-container"><source src="{{sample.src_audio_base}}/{{src}}/pred.wav" type="audio/wav"></audio>
+                        </td>
+                      {% endfor %}
+                      </tr>
+                  {% endfor %}
+            
+                  <tr></tr>
+                  
+                  
+                </tbody>
+            </table>
+        </div>
+      </div>
+
+    </div>
+    <!--/ Animation. -->
+
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      
+
+    <!-- spec. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Spectrogram</h2>
+        
+        {% for sample in samples %}
+          <h3 class="title is-4">Song #{{loop.index}}: {{sample.song_name}}</h3>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Mixture</th>
+                <th scope="col">Source</th>
+                <th scope="col">GT</th>
+                <th scope="col">Pred</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              {% for src in source_names %}
+                  <tr>
+                    {% if loop.index == 1 %}
+                      <td rowspan="4"><img src="{{sample.mixture_spec}}"/></td>
+                    {% endif %}
+                    
+                    <td>{{src}}</td>
+                    <td><img src="{{sample.src_audio_base}}/{{src}}/spec_gt.png" /></td>
+                    <td><img src="{{sample.src_audio_base}}/{{src}}/spec_pred.png" /></td>
+                  </tr>
+              {% endfor %}
+              <tr></tr>
+              
+             
+              <!-- <tr>
+                <td>vocals</td>
+                <td>gt</td>
+                <td>gt</td>
+              </tr>
+
+              <tr>
+                <td>vocals</td>
+                <td>gt</td>
+                <td>gt</td>
+              </tr> -->
+              
+
+            
+
+
+                     <!-- <td rowspan="2"><img src="{{sample.mixture_spec}}"></td> -->
+
+              <!-- {% for src in source_names %}
+              <tr>
+                
+                <td>{{src}}</td>
+                <td>
+                  <img src="{{sample.src_audio_base}}/{{src}}/spec_gt.png"></img>
+                </td>
+                <td>
+                  <img src="{{sample.src_audio_base}}/{{src}}/spec_pred.png"></img>
+                </td>
+              </tr> -->
+              <!-- <tr></tr> -->
+                
+              <!-- {% endfor %} -->
+              
+              
+              
+            </tbody>
+        </table>
+        {% endfor %}
+        <!-- <div class="columns is-hcentered">
+          
+        </div> -->
+      </div>
+
+    </div>
+    <!--/ spec. -->
+
+
+  </div>
+</section>
+
+{% include './bibtex.html' %}
+{% include './footer.html' %}
+</body>
+</html>
