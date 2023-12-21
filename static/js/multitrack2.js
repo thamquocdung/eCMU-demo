@@ -319,7 +319,7 @@
            waveColor: "#656666", // 'hsl(206, 100%, 65%)',
            progressColor: metaData[i]["progressColor"],
          },
-         url: `./static/audio/${filenames[f][1]}/${metaData[i]["stem"].toLowerCase()}.mp3`,
+         url: `static/audio/${filenames[f][1]}/${metaData[i]["stem"].toLowerCase()}.mp3`,
          intro: {
            endTime: 120,
            label: metaData[i]["stem"],
