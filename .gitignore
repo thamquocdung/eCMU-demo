@@ -159,8 +159,8 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-static/videos/*
-!static/videos/.gitkeep
-static/audio/*
-!static/audio/.gitkeep
-static/samples
+# static/videos/*
+# !static/videos/.gitkeep
+# static/audio/*
+# !static/audio/.gitkeep
+# static/samples
