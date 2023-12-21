@@ -1,14 +1,12 @@
-{% if show_result == 1 %}
-    {% include './control-banner.html' %}
+<div class="result-container">
+    <%- include('static/templates/play-controller.html') -%>
     <div id="player-container" style="display: flex;">
       <video id="video-player" width="640" height="360" controls>
-        <source src="{{video_src}}" type="video/mp4">
+        <source src="#" type="video/mp4">
       </video>
       <div class="multitrack-container">
         <div class="multitrack-ctl"></div>
         <div id="multitrack"></div>
       </div>
     </div>
-
-{% endif %}
-
+</div>
